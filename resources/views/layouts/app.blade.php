@@ -10,9 +10,9 @@
 <head>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"/>
-    <title>Page 1 - Starter Kit | Vuexy - Bootstrap Admin Template</title>
+    <title>@yield("title", "Page") - {{ config('app.name') }}</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="../../assets/img/favicon/favicon.ico"/>
+    <link rel="icon" type="image/x-icon" href="{{ asset('/assets/img/favicon/favicon.ico') }}"/>
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -31,6 +31,7 @@
     @yield("styles")
     @stack("styles")
     @livewireStyles
+    @laravelPWA
 
     <!-- Page CSS -->
 
@@ -77,9 +78,9 @@
                                     document.write(new Date().getFullYear());
                                 </script>
                                 , made with ❤️ by
-                                <a href="https://pixinvent.com" target="_blank"
+                                <a href="https://{{ config('app.domain') }}" target="_blank"
                                    class="footer-link text-primary fw-medium"
-                                >Pixinvent</a
+                                >Vortech Studio</a
                                 >
                             </div>
                             <div class="d-none d-lg-inline-block">
@@ -128,6 +129,7 @@
 
 <!-- Page JS -->
 @livewireScripts
+<x-livewire-alert::scripts />
 @yield("scripts")
 @stack("scripts")
 </body>
