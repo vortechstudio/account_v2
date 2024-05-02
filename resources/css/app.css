@@ -5,3 +5,25 @@
 @import "../../public/assets/vendor/css/rtl/theme-default.css";
 @import "../../public/assets/css/demo.css";
 @import "./materialcolor.css";
+
+.bullet {
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 6px;
+    width: 8px;
+    height: 4px;
+    flex-shrink: 0;
+}
+
+.bullet-vertical {
+    width: 4px;
+    height: 8px;
+}
+
+.w-px-5 {
+    width: 5px;
+}
+
+.h-px-10 {
+    height: 10px;
+}

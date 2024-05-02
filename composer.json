@@ -17,6 +17,7 @@
         "laravel/socialite": "^5.13",
         "laravel/tinker": "^2.8",
         "livewire/livewire": "^3.4",
+        "pharaonic/laravel-categorizable": "^1.1",
         "pharaonic/laravel-menus": "^1.3",
         "php-flasher/flasher-laravel": "*",
         "php-flasher/flasher-toastr-laravel": "^1.15",
