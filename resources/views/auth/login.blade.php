@@ -89,8 +89,11 @@
                     <a href="{{ route('auth.redirect', 'battlenet') }}" class="btn btn-xl btn-white  w-100 mb-3">
                         <img src="{{ asset('images/icons/battlenet.png') }}" class="w-px-30" alt=""> Battle.net
                     </a>
-                    <a href="{{ route('auth.redirect', 'discord') }}" class="btn btn-xl bg-purple-500 text-white w-100 mb-3">
+                    <a href="{{ route('auth.redirect', 'discord') }}" class="btn btn-xl bg-blue-500 text-white w-100 mb-3">
                         <i class="tf-icons ti ti-brand-discord me-1"></i> Discord
+                    </a>
+                    <a href="{{ route('auth.redirect', 'twitch') }}" class="btn btn-xl bg-purple-500 text-white w-100 mb-3">
+                        <i class="tf-icons ti ti-brand-twitch me-1"></i> Twitch
                     </a>
                 </div>
             </div>
