@@ -23,8 +23,12 @@
         "rappasoft/laravel-authentication-log": "^4.0",
         "salahhusa9/laravel-updater": "^1.0",
         "silviolleite/laravelpwa": "^2.0",
+        "socialiteproviders/battlenet": "^4.1",
+        "socialiteproviders/discord": "*",
         "socialiteproviders/facebook": "^4.1",
         "socialiteproviders/google": "^4.1",
+        "socialiteproviders/steam": "^4.2",
+        "socialiteproviders/twitch": "^5.4",
         "torann/geoip": "^3.0",
         "vstudio/versionbuildaction": "^1.1"
     },

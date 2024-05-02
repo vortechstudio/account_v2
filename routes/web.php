@@ -21,7 +21,8 @@ Route::prefix('auth')->as('auth.')->group(function () {
     Route::get('login', [\App\Http\Controllers\Auth\AuthController::class, 'login'])->name('login');
     Route::get('{provider}/redirect', [\App\Http\Controllers\Auth\AuthController::class, 'redirect'])->name('redirect');
     Route::get('{provider}/callback', [\App\Http\Controllers\Auth\AuthController::class, 'callback'])->name('callback');
-    //Route::get('{provider}/setup/{email}', \App\Livewire\Auth\SetupRegister::class)->name('setup-register');
+    Route::get('{provider}/setup/{email}', [\App\Http\Controllers\Auth\AuthController::class, 'setupAccount'])->name('setup-register');
+    Route::post('{provider}/setup/{email}', [\App\Http\Controllers\Auth\AuthController::class, 'setupAccountSubmit'])->name('setup-register.submit');
     Route::get('logout', [\App\Http\Controllers\Auth\AuthController::class, 'logout'])->name('logout');
     Route::post('password-confirm', [\App\Http\Controllers\Auth\AuthController::class, 'confirmPassword'])
         ->name('confirm-password')

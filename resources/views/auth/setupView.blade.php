@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Connexion - {{ config('app.name') }}</title>
+    <title>Gestion de compte - {{ config('app.name') }}</title>
 
 
     <link rel="icon" type="image/x-icon" href="{{ asset('/assets/img/favicon/favicon.ico') }}" />
@@ -77,24 +77,18 @@
                 <p class="mb-4">Veuillez vous connecter à votre compte et commencer l'aventure</p>
 
                 <div class="d-flex flex-column justify-content-center">
-                    <a href="{{ route('auth.redirect', 'google') }}" class="btn btn-xl btn-google-plus w-100 mb-3">
-                        <i class="tf-icons ti ti-brand-google me-1"></i> Google
-                    </a>
-                    <a href="{{ route('auth.redirect', 'facebook') }}" class="btn btn-xl btn-facebook w-100 mb-3">
-                        <i class="tf-icons ti ti-brand-facebook me-1"></i> Facebook
-                    </a>
-                    <a href="{{ route('auth.redirect', 'steam') }}" class="btn btn-xl btn-twitter  w-100 mb-3">
-                        <i class="tf-icons ti ti-brand-steam me-1"></i> Steam
-                    </a>
-                    <a href="{{ route('auth.redirect', 'battlenet') }}" class="btn btn-xl btn-white  w-100 mb-3">
-                        <img src="{{ asset('images/icons/battlenet.png') }}" class="w-px-30" alt=""> Battle.net
-                    </a>
-                    <a href="{{ route('auth.redirect', 'discord') }}" class="btn btn-xl bg-blue-500 text-white w-100 mb-3">
-                        <i class="tf-icons ti ti-brand-discord me-1"></i> Discord
-                    </a>
-                    <a href="{{ route('auth.redirect', 'twitch') }}" class="btn btn-xl bg-purple-500 text-white w-100 mb-3">
-                        <i class="tf-icons ti ti-brand-twitch me-1"></i> Twitch
-                    </a>
+                    <form action="{{ route('auth.setup-register.submit', [$provider, $email]) }}" method="POST">
+                        @csrf
+                        <x-form.input
+                            class="mb-3"
+                            name="password"
+                            type="password"
+                            label="Définission du mot de passe"
+                            required="true" />
+
+                        <x-form.button
+                            text-submit="Valider" />
+                    </form>
                 </div>
             </div>
         </div>
