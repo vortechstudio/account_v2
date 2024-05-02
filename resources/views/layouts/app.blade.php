@@ -84,7 +84,8 @@
                                 >
                             </div>
                             <div class="d-none d-lg-inline-block">
-
+                                <span>Service: {!! VersionBuildAction::getLabelEnv() !!}</span>
+                                <span>v.{{ VersionBuildAction::getVersionInfo() }}</span>
                             </div>
                         </div>
                     </div>
