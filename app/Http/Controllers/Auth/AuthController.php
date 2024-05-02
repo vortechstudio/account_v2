@@ -4,8 +4,13 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User\User;
+use App\Services\RailwayService;
+use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Socialite\Facades\Socialite;
+use Log;
 
 class AuthController extends Controller
 {
@@ -60,6 +65,45 @@ class AuthController extends Controller
         }
 
         \Auth::login($user);
+
+        return redirect()->route('home');
+    }
+
+    public function setupAccount(string $provider, string $email)
+    {
+        return view('auth.setupView', compact('provider', 'email'));
+    }
+
+    /**
+     * Submit method for setting up an account.
+     *
+     * @param \Illuminate\Http\Request $request The HTTP request object
+     * @param string $provider The social media provider
+     * @param string $email The user's email address
+     *
+     * @return \Illuminate\Http\RedirectResponse Redirects user to the home route
+     */
+    public function setupAccountSubmit(Request $request, string $provider, string $email)
+    {
+        $request->validate([
+            'password' => 'required|min:8',
+        ]);
+
+        try {
+            $user = User::where('email', $email)->firstOrFail();
+
+            $user->update([
+                'password' => Hash::make($request->password),
+            ]);
+
+            Auth::login($user);
+            $user->logs()->create([
+                'action' => "Connexion au service: Gestion de compte",
+                'user_id' => $user->id,
+            ]);
+        } catch (Exception $exception) {
+            Log::emergency($exception->getMessage(), [$exception]);
+        }
 
         return redirect()->route('home');
     }
