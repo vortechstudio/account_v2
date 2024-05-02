@@ -83,8 +83,11 @@
                     <a href="{{ route('auth.redirect', 'facebook') }}" class="btn btn-xl btn-facebook w-100 mb-3">
                         <i class="tf-icons ti ti-brand-facebook me-1"></i> Facebook
                     </a>
-                    <a href="{{ route('auth.redirect', 'steam') }}" class="btn btn-xl btn-facebook  w-100 mb-3">
+                    <a href="{{ route('auth.redirect', 'steam') }}" class="btn btn-xl btn-twitter  w-100 mb-3">
                         <i class="tf-icons ti ti-brand-steam me-1"></i> Steam
+                    </a>
+                    <a href="{{ route('auth.redirect', 'battlenet') }}" class="btn btn-xl btn-white  w-100 mb-3">
+                        <img src="{{ asset('images/icons/battlenet.png') }}" class="w-px-30" alt=""> Battle.net
                     </a>
                 </div>
             </div>

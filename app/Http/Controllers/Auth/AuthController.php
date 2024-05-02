@@ -27,6 +27,7 @@ class AuthController extends Controller
             'google' => $this->verifyUser($user, 'google'),
             'facebook' => $this->verifyUser($user, 'facebook'),
             'steam' => $this->verifyUser($user, 'steam'),
+            'battlenet' => $this->verifyUser($user, 'battlenet'),
         };
     }
 
