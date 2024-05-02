@@ -5,7 +5,7 @@
 @endsection
 
 @section("content")
-    <div class="card bg-gradient-dark text-white mb-10" >
+    <div class="card bg-gradient-dark text-white mb-5" >
         <div class="card-body">
             <div class="container-xl d-flex flex-row justify-content-between align-items-center">
                 <div>
