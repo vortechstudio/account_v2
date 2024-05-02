@@ -43,4 +43,15 @@ return [
         'redirect' => env('FACEBOOK_REDIRECT_URI')
     ],
 
+    'steam' => [
+        'client_id' => null,
+        'client_secret' => env('STEAM_CLIENT_SECRET'),
+        'redirect' => env('STEAM_REDIRECT_URI'),
+        'allowed_hosts' => [
+            'secure.vortechstudio.io',
+            'account.vortechstudio.ovh',
+            'account.vortechstudio.fr',
+        ]
+    ],
+
 ];

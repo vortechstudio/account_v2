@@ -83,6 +83,9 @@
                     <a href="{{ route('auth.redirect', 'facebook') }}" class="btn btn-xl btn-facebook w-100 mb-3">
                         <i class="tf-icons ti ti-brand-facebook me-1"></i> Facebook
                     </a>
+                    <a href="{{ route('auth.redirect', 'steam') }}" class="btn btn-xl btn-facebook  w-100 mb-3">
+                        <i class="tf-icons ti ti-brand-steam me-1"></i> Steam
+                    </a>
                 </div>
             </div>
         </div>

@@ -25,6 +25,7 @@
         "silviolleite/laravelpwa": "^2.0",
         "socialiteproviders/facebook": "^4.1",
         "socialiteproviders/google": "^4.1",
+        "socialiteproviders/steam": "^4.2",
         "torann/geoip": "^3.0",
         "vstudio/versionbuildaction": "^1.1"
     },

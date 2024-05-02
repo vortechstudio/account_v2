@@ -22,6 +22,7 @@ class EventServiceProvider extends ServiceProvider
         SocialiteWasCalled::class => [
             \SocialiteProviders\Google\GoogleExtendSocialite::class.'@handle',
             \SocialiteProviders\Facebook\FacebookExtendSocialite::class.'@handle',
+            \SocialiteProviders\Steam\SteamExtendSocialite::class.'@handle',
         ]
     ];
 
