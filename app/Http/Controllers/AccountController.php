@@ -12,4 +12,9 @@ class AccountController extends Controller
             "user" => User::with('latestAuthentication')->find(\Auth::id())
         ]);
     }
+
+    public function history()
+    {
+        return view('account.history');
+    }
 }
