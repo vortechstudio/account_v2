@@ -6,6 +6,7 @@
 @import "../../public/assets/vendor/libs/spinkit/spinkit.css";
 @import "../../public/assets/css/demo.css";
 @import "./materialcolor.css";
+@import 'animate.css/animate.min.css';
 
 .bullet {
     display: inline-block;
@@ -27,4 +28,12 @@
 
 .h-px-10 {
     height: 10px;
+}
+
+.rounded-4 {
+    border-radius: 0.750rem !important;
+}
+
+.rounded-5 {
+    border-radius: 1rem !important;
 }
