@@ -107,10 +107,31 @@
                     <div class="tab-pane" id="navs-info" role="tabpanel">
                         <livewire:account.info-card />
                     </div>
+                    <div class="tab-pane fade" id="navs-delete" role="tabpanel">
+                        <livewire:account.delete-account-card />
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-
 @endsection
+
+@push('scripts')
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script type="text/javascript">
+        window.addEventListener('swal:confirm', event => {
+            swal({
+                title: event.detail.title,
+                text: event.detail.text,
+                icon: event.detail.type,
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        Livewire.dispatch('delete');
+                    }
+                });
+        });
+    </script>
+@endpush

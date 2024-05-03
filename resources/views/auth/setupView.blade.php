@@ -49,21 +49,16 @@
     <div class="authentication-inner row">
         <!-- /Left Text -->
         <div class="d-none d-lg-flex col-lg-7 p-0">
-            <div class="auth-cover-bg auth-cover-bg-color d-flex justify-content-center align-items-center" style="background: url('{{ Storage::url('services/2/wall_login.png') }}')">
-                <img
-                    src="{{ Storage::url('services/2/logo-long-white.png') }}"
-                    alt="auth-login-cover"
-                    class="img-fluid my-5 auth-illustration"
-                    data-app-light-img="{{ Storage::url('services/2/logo-long-white.png') }}"
-                    data-app-dark-img="{{ Storage::url('services/2/logo-long-white.png') }}" />
+            <x-base.background-animated />
+            <div class="auth-cover-bg auth-cover-bg-color d-flex justify-content-center align-items-center" style="background: url('{{ Storage::url('other/wall_login.svg') }}'); background-position: center; background-size: cover">
 
             </div>
         </div>
         <!-- /Left Text -->
 
         <!-- Login -->
-        <div class="d-flex col-12 col-lg-5 align-items-center p-sm-5 p-4">
-            <div class="w-px-400 mx-auto">
+        <div class="d-flex col-12 col-lg-5 align-items-center p-sm-5 p-4 z-1">
+            <div class="w-px-600 mx-auto p-5 bg-white rounded-4">
                 <!-- Logo -->
                 <div class="app-brand mb-4">
                     <a href="{{ route('home') }}" class="app-brand-link gap-2">
@@ -80,14 +75,13 @@
                     <form action="{{ route('auth.setup-register.submit', [$provider, $email]) }}" method="POST">
                         @csrf
                         <x-form.input
-                            class="mb-3"
                             name="password"
                             type="password"
-                            label="Définission du mot de passe"
-                            required="true" />
+                            required="true"
+                            label="Définission du nouveau Mot de passe" />
 
-                        <x-form.button
-                            text-submit="Valider" />
+                        <x-form.submit
+                            text="Valider" />
                     </form>
                 </div>
             </div>

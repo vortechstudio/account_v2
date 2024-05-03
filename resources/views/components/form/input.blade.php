@@ -8,6 +8,7 @@
     <input
         type="{{ $type }}"
         class="form-control {{ $size != null ? 'form-control-'.$size : '' }} @error("$name") is-invalid @enderror"
+        name="{{ $name }}"
         placeholder="{{ $placeholder != '' ? $placeholder : $label }}"
         id="{{ $name }}"
         @if($livewire) wire:model="{{ $liveModel ? $model.'.'.$name : $name }}" @endif
