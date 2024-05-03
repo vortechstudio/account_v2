@@ -13,18 +13,20 @@ class Input extends Component
      */
     public function __construct(
         public string $name,
-        public ?string $label = '',
+        public string $label,
         public string $type = 'text',
+        public ?string $value = null,
         public string $placeholder = '',
         public bool $required = false,
-        public string $value = '',
-        public string $class = '',
-        public bool $noLabel = false,
-        public $mask = '',
-        public bool $isModel = false,
-        public string $model = '',
-        public ?string $hint = null
-    ) {
+        public bool $float = false,
+        public bool $livewire = false,
+        public ?string $size = null,
+        public bool $liveModel = false,
+        public ?string $model = null,
+        public ?string $hint = null,
+    )
+    {
+        //
     }
 
     /**

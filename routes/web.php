@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/', function () {
+        return view('welcome');
+    })->name('home');
+
+    Route::prefix('account')->as('account.')->group(function () {
+        Route::get('/', [AccountController::class, 'index'])->name('index');
+        Route::get('/history', [AccountController::class, 'history'])->name('history');
+        Route::get('/loginStatus', [AccountController::class, 'login'])->name('login');
+        Route::get('/rgpd', [AccountController::class, 'rgpd'])->name('rgpd');
+    });
+});
 
 Route::prefix('auth')->as('auth.')->group(function () {
     Route::get('login', [\App\Http\Controllers\Auth\AuthController::class, 'login'])->name('login');
@@ -32,3 +42,7 @@ Route::prefix('auth')->as('auth.')->group(function () {
 Route::get('password-confirm', [\App\Http\Controllers\Auth\AuthController::class, 'confirmPasswordForm'])
     ->name('password.confirm')
     ->middleware('auth');
+
+Route::get('/test', function () {
+    dd(\Pharaonic\Laravel\Menus\Models\Menu::section('account_head')->get());
+});

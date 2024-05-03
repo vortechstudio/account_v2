@@ -1,4 +1,4 @@
-<svg id="svg-background" class="position-absolute z-index-n1" viewBox="0 0 1920 880">
+<svg id="svg-background" class="position-absolute z-0" viewBox="0 0 1920 880">
     <g>
         <linearGradient id="svg-gradient" x1="0" x2="1" y1="0" y2="0">
             <stop stop-color="hsl(255, 88%, 33.7%)" offset="0"></stop>

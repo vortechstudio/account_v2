@@ -20,14 +20,7 @@
         href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&ampdisplay=swap"
         rel="stylesheet"/>
 
-    <link rel="stylesheet" href="{{ asset('/assets/vendor/fonts/tabler-icons.css') }}"/>
-    <!-- <link rel="stylesheet" href="../../assets/vendor/fonts/fontawesome.css" /> -->
-    <!-- <link rel="stylesheet" href="../../assets/vendor/fonts/flag-icons.css" /> -->
-
-    <!-- Core CSS -->
-    <link rel="stylesheet" href="{{ asset('/assets/vendor/css/rtl/core.css') }}" class="template-customizer-core-css"/>
-    <link rel="stylesheet" href="{{ asset('/assets/vendor/css/rtl/theme-default.css') }}" class="template-customizer-theme-css"/>
-    <link rel="stylesheet" href="{{ asset('/assets/css/demo.css') }}"/>
+    @vite(['resources/css/app.css'])
     @yield("styles")
     @stack("styles")
     @livewireStyles
@@ -58,7 +51,7 @@
 
                 <!-- Content -->
 
-                <div class="container-xxl flex-grow-1 container-p-y">
+                <div class="container-full flex-grow-1 container-p-y">
                     @isset($slot)
                         {{ $slot }}
                     @else
@@ -84,7 +77,8 @@
                                 >
                             </div>
                             <div class="d-none d-lg-inline-block">
-
+                                <span>Service: {!! VersionBuildAction::getLabelEnv() !!}</span>
+                                <span>v.{{ VersionBuildAction::getVersionInfo() }}</span>
                             </div>
                         </div>
                     </div>
@@ -126,6 +120,7 @@
 
 <!-- Main JS -->
 <script src="{{ asset('/assets/js/main.js') }}"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <!-- Page JS -->
 @livewireScripts

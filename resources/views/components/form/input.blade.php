@@ -1,20 +1,26 @@
-<div class="mb-10">
-    @if(!$noLabel)
-    <label for="{{ $name }}" class="form-label {{ $required ? 'required' : '' }}">{{ $label }}</label>
-    @endif
+<div class="@if($float) form-floating @endif mb-3">
+    <label for="{{ $name }}" class="form-label">
+        {{ $label }}
+        @if($required)
+            <span class="text-danger">*</span>
+        @endif
+    </label>
     <input
         type="{{ $type }}"
-        id="{{ $name }}"
-        wire:model.prevent="{{ $isModel ? $model.'.'.$name : $name }}"
+        class="form-control {{ $size != null ? 'form-control-'.$size : '' }} @error("$name") is-invalid @enderror"
         name="{{ $name }}"
-        placeholder="{{ $required && $noLabel ? ($placeholder ? $placeholder.'*' : $label.'*') : ($placeholder ? $placeholder : $label) }}"
-        class="form-control {{ $class }} @error("$name") is-invalid @enderror"
-        value="{{ $value }}"
-        @if(isset($mask)) data-inputmask="{{ $mask }}" @endif>
+        placeholder="{{ $placeholder != '' ? $placeholder : $label }}"
+        id="{{ $name }}"
+        @if($livewire) wire:model="{{ $liveModel ? $model.'.'.$name : $name }}" @endif
+        value="{{ $value }}" />
+
     @error("$name")
-        <span class="text-danger error">{{ $message }}</span>
+    <div class="invalid-feedback">
+        {{ $message }}
+    </div>
     @enderror
-    @if(isset($hint))
-        <p>{{ $hint }}</p>
+
+    @if(!empty($hint))
+        <div class="form-text">{{ $hint }}</div>
     @endif
 </div>
