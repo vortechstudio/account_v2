@@ -120,6 +120,7 @@
 
 <!-- Main JS -->
 <script src="{{ asset('/assets/js/main.js') }}"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <!-- Page JS -->
 @livewireScripts

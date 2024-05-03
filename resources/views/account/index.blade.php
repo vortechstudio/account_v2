@@ -104,6 +104,9 @@
                     <div class="tab-pane fade show active" id="navs-security" role="tabpanel">
                         <livewire:account.security-card />
                     </div>
+                    <div class="tab-pane" id="navs-info" role="tabpanel">
+                        <livewire:account.info-card />
+                    </div>
                 </div>
             </div>
         </div>
