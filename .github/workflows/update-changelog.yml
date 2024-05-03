@@ -1,7 +1,7 @@
 name: update changelog
 
 on:
-  workflow_call:
+  workflow_dispatch:
     inputs:
       branch:
         description: 'Target branch'
