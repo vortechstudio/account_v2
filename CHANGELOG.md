@@ -1,3 +1,14 @@
+# [1.1.0](https://github.com/vortechstudio/account_v2/compare/v1.0.0...v1.1.0) (2024-05-04)
+
+
+### Features
+
+* Amélioration des ressources JS et ajout de nouvelles dépendances ([a8d2a06](https://github.com/vortechstudio/account_v2/commit/a8d2a06ba9ce8089807ae88e2c69c3838e5fb7d6))
+* **Compte utilisateur:** Ajout de la fonctionnalité d'historique de compte ([66cfb82](https://github.com/vortechstudio/account_v2/commit/66cfb82aa93402cf52af7af56fd11d93f64d05f8))
+* **Compte utilisateur:** Ajout de nouvelles fonctionnalités ([e5d7d5b](https://github.com/vortechstudio/account_v2/commit/e5d7d5b49268a4da4406d1fd3dfddf5231a30730))
+* **Compte utilisateur:** Ajout page historique de connexion et gestion des cookies ([3956158](https://github.com/vortechstudio/account_v2/commit/3956158e01b6c0b57d1e582ad5bbc8cb6905e762))
+* **Services & Options:** Ajout du contrôleur Service avec comptage d'état des services ([0d4445a](https://github.com/vortechstudio/account_v2/commit/0d4445a5e531247bd4db8bbccac82cee1c800bd0))
+
 # 1.0.0 (2024-05-03)
 
 
