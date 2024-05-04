@@ -650,3 +650,10 @@ if (typeof $ !== 'undefined') {
     }
   });
 }
+
+Object.assign(DataTable.defaults, {
+    language: {
+        url: '//cdn.datatables.net/plug-ins/2.0.6/i18n/fr-FR.json',
+    },
+    pagingType: 'simple_numbers',
+})

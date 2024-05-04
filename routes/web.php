@@ -24,7 +24,17 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/history', [AccountController::class, 'history'])->name('history');
         Route::get('/loginStatus', [AccountController::class, 'login'])->name('login');
         Route::get('/rgpd', [AccountController::class, 'rgpd'])->name('rgpd');
+        Route::get('/rgpd/print', [AccountController::class, 'rgpdPrint'])->name('rgpd-print');
     });
+
+    Route::prefix('services')->as('services.')->group(function () {
+        Route::get('/', [\App\Http\Controllers\ServiceController::class, 'index'])->name('index');
+    });
+});
+
+Route::prefix('about')->as("about.")->group(function() {
+    Route::get('/userAgreement', [\App\Http\Controllers\AboutController::class, 'userAgreement'])->name('userAgreement');
+    Route::get('/privacy', [\App\Http\Controllers\AboutController::class, 'privacy'])->name('privacy');
 });
 
 Route::prefix('auth')->as('auth.')->group(function () {
