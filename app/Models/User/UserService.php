@@ -10,8 +10,6 @@ class UserService extends Model
 {
     use SoftDeletes;
 
-    public $timestamps = false;
-
     protected $guarded = [];
 
     public function user()

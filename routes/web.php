@@ -26,6 +26,10 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/rgpd', [AccountController::class, 'rgpd'])->name('rgpd');
         Route::get('/rgpd/print', [AccountController::class, 'rgpdPrint'])->name('rgpd-print');
     });
+
+    Route::prefix('services')->as('services.')->group(function () {
+        Route::get('/', [\App\Http\Controllers\ServiceController::class, 'index'])->name('index');
+    });
 });
 
 Route::prefix('about')->as("about.")->group(function() {

@@ -25,17 +25,18 @@ class DeleteAccountCard extends Component
     {
         $user = \Auth::user();
         try {
-            $user->delete();
             foreach (User::where('admin', true)->get() as $admin) {
                 $admin->notify(new UserDeleteNotification($user));
             }
             $user->notify(new DeleteAccountNotification($user));
+            $user->delete();
             $this->redirect('/auth/logout');
         }catch (\Exception $exception) {
             \Log::emergency($exception->getMessage(), [
                 'niveau' => 'Critique',
                 'sujet' => "Suppression d'un compte utilisateur",
-                'context' => $exception
+                'fichier' => $exception->getFile().':'.$exception->getLine(),
+                'context' => $exception,
             ]);
             $this->alert("error", "Erreur lors de la suppression de votre compte !");
         }
