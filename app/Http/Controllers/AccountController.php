@@ -29,4 +29,9 @@ class AccountController extends Controller
             ->get()
         ]);
     }
+
+    public function rgpd()
+    {
+        return view('account.rgpd');
+    }
 }
