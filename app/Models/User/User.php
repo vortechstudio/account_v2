@@ -13,13 +13,14 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use IvanoMatteo\LaravelDeviceTracking\Traits\UseDevices;
 use Laravel\Sanctum\HasApiTokens;
 use Laravel\Sanctum\NewAccessToken;
 use Rappasoft\LaravelAuthenticationLog\Traits\AuthenticationLoggable;
 
 class User extends Authenticatable
 {
-    use AuthenticationLoggable, HasApiTokens, HasFactory, Notifiable;
+    use AuthenticationLoggable, HasApiTokens, HasFactory, Notifiable, UseDevices;
 
     /**
      * The attributes that are mass assignable.
