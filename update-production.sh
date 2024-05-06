@@ -14,5 +14,5 @@ php artisan config:clear
 php artisan view:clear
 php artisan clear
 
-php artisan down
+php artisan up
 
