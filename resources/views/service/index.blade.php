@@ -61,13 +61,18 @@
                         <h4 class="card-title"><i class="ti ti-traffic-lights text-success"></i> Services Actifs</h4>
                         @if($count_actif != 0)
                             @foreach(auth()->user()->services()->where('status', true)->get() as $service)
-                                <div class="d-flex flex-row align-item-center p-3 rounded-2 bg-white shadow-lg">
-                                    <div class="avatar avatar-md me-2">
-                                        <img src="{{ $service->service->getImage($service->service_id, 'icon') }}" class="rounded-circle" alt="">
+                                <div class="d-flex flex-row justify-content-between align-item-center p-3 rounded-2 bg-white shadow-lg mb-3">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <div class="avatar avatar-md me-2">
+                                            <img src="{{ $service->service->getImage($service->service_id, 'icon') }}" class="rounded-circle" alt="">
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <span class="fs-4">{{ $service->service->name }}</span>
+                                            <span><strong>Date d'enregistrement: </strong>{{ $service->created_at->format('d/m/Y à H:i') }}</span>
+                                        </div>
                                     </div>
-                                    <div class="d-flex flex-column">
-                                        <span class="fs-4">{{ $service->service->name }}</span>
-                                        <span><strong>Date d'enregistrement: </strong>{{ $service->created_at->format('d/m/Y à H:i') }}</span>
+                                    <div>
+                                        {!! $service->premium_label !!}
                                     </div>
                                 </div>
                             @endforeach
