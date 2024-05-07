@@ -114,7 +114,8 @@
 <script src="{{ asset('/assets/vendor/libs/node-waves/node-waves.js') }}"></script>
 <script src="{{ asset('/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
 <script src="{{ asset('/assets/vendor/libs/hammer/hammer.js') }}"></script>
-
+<script src="{{ asset('/assets/vendor/libs/i18n/i18n.js') }}"></script>
+<script src="{{ asset('/assets/vendor/libs/typeahead-js/typeahead.js') }}"></script>
 <script src="{{ asset('/assets/vendor/js/menu.js') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.0.6/b-3.0.2/date-1.5.2/rg-1.5.0/sb-1.7.1/sp-2.3.1/sl-2.0.1/datatables.min.js"></script>

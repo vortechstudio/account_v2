@@ -33,12 +33,19 @@
     <link rel="stylesheet" href="{{ asset('/assets/vendor/libs/typeahead-js/typeahead.css') }}" />
     <!-- Vendor -->
     <link rel="stylesheet" href="{{ asset('/assets/vendor/libs/@form-validation/form-validation.css') }}" />
+    <link href="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.0.6/b-3.0.2/date-1.5.2/rg-1.5.0/sb-1.7.1/sp-2.3.1/sl-2.0.1/datatables.min.css" rel="stylesheet">
 
     <!-- Page CSS -->
     <!-- Page -->
     <link rel="stylesheet" href="{{ asset('/assets/vendor/css/pages/page-auth.css') }}" />
 
-   @vite(['resources/css/app.css'])
+    <!-- Helpers -->
+    <script src="{{ asset('/assets/vendor/js/helpers.js') }}"></script>
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Template customizer: To hide customizer set displayCustomizer value false in config.js.  -->
+    <script src="{{ asset('/assets/vendor/js/template-customizer.js') }}"></script>
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="{{ asset('/assets/js/config.js') }}"></script>
 </head>
 
 <body>
@@ -100,12 +107,23 @@
 <!-- / Content -->
 
 <!-- Core JS -->
-@vite(['resources/js/plugin.js'])
+<script src="{{ asset('/assets/vendor/libs/jquery/jquery.js') }}"></script>
+<script src="{{ asset('/assets/vendor/libs/popper/popper.js') }}"></script>
+<script src="{{ asset('/assets/vendor/js/bootstrap.js') }}"></script>
+<script src="{{ asset('/assets/vendor/libs/node-waves/node-waves.js') }}"></script>
+<script src="{{ asset('/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
+<script src="{{ asset('/assets/vendor/libs/hammer/hammer.js') }}"></script>
+<script src="{{ asset('/assets/vendor/libs/i18n/i18n.js') }}"></script>
+<script src="{{ asset('/assets/vendor/libs/typeahead-js/typeahead.js') }}"></script>
+<script src="{{ asset('/assets/vendor/js/menu.js') }}"></script>
 
 <!-- Vendors JS -->
 <script src="{{ asset('/assets/vendor/libs/@form-validation/popular.js') }}"></script>
 <script src="{{ asset('/assets/vendor/libs/@form-validation/bootstrap5.js') }}"></script>
 <script src="{{ asset('/assets/vendor/libs/@form-validation/auto-focus.js') }}"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.datatables.net/v/bs5/jq-3.7.0/dt-2.0.6/b-3.0.2/date-1.5.2/rg-1.5.0/sb-1.7.1/sp-2.3.1/sl-2.0.1/datatables.min.js"></script>
 
 <!-- Main JS -->
 <script src="{{ asset('/assets/js/main.js') }}"></script>
